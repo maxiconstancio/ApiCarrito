@@ -5,6 +5,7 @@ on:
     branches:
       - "main"
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,14 +22,13 @@ jobs:
     -
       name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
-      with:
-        env:
-          MONGO_URI: ${{ secrets.MONGO_URI }}
     -
       name: Build and push
       uses: docker/build-push-action@v3
       with:
         context: .
         file: ./Dockerfile
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
         push: true
         tags: ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito:latest
