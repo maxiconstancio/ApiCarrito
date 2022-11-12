@@ -5,7 +5,8 @@ on:
     branches:
       - "main"
 
-
+env: 
+  MONGO_URI: '${{ secrets.MONGO_URI }}'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,11 +26,11 @@ jobs:
     -
       name: Build and push
       uses: docker/build-push-action@v3
+      env:
+        MONGO_URI=$MONGO_URIs
       with:
         context: .
         file: ./Dockerfile
-        secrets: |
-          "MONGO_URI=${{ secrets.MONGO_URI }}"
         push: true
         tags: ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito:latest
       
