@@ -30,5 +30,6 @@ jobs:
       with:
         context: .
         file: ./Dockerfile
+        env: $MONGO_URI
         push: true
         tags: ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito:latest
