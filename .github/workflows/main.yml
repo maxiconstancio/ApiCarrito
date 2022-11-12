@@ -31,4 +31,5 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito:latest
       env:
-        MONGO_URI: ${{ secrets.MONGO_URI }}
+        ENV: 
+          MONGO_URI: ${{ secrets.MONGO_URI }}
