@@ -26,8 +26,7 @@ jobs:
     -
       name: Build and push
       uses: docker/build-push-action@v3
-      env:
-        MONGO_URI=$MONGO_URI
+      env: MONGO_URI=$MONGO_URI
       with:
         context: .
         file: ./Dockerfile
