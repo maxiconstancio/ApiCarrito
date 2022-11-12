@@ -10,7 +10,7 @@ const cartValidation = require("../validations/cart");
 app.get("/cart", findCart);
 
 /* PATCH Cart */
-app.patch("/cart/:codeProduct", update );
+app.put("/cart/:codeProduct", update );
  
 
 /* POST Cart */
