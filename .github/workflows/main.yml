@@ -25,10 +25,10 @@ jobs:
     -
       name: Build and push
       uses: docker/build-push-action@v3
-      secrets:
-        MONGO_URI:$MONGO_URI
       with:
         context: .
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito:latest
+        secrets:
+          MONGO_URI=${{ MONGO_URI }}
