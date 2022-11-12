@@ -4,7 +4,7 @@ const app = express();
 const cors = require('cors')
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-require("dotenv").config({ path: "db.env" });
+require('dotenv').config();
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
