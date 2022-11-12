@@ -3,7 +3,7 @@ name: apicarrito
 on:
   push:
     branches:
-      - "dev"
+      - "main"
 
 jobs:
   build:
