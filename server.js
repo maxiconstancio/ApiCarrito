@@ -8,7 +8,6 @@ require('dotenv').config();
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-console.log(process.env.MONGO_URI)
 const port = process.env.PORT || 3000;
 
 
@@ -20,6 +19,8 @@ app.use(require('./routes/cart'));
 
 app.listen(port, () => {
   console.log(`corriento en el puerto: ${port}`)
+  
+console.log(process.env.MONGO_URI)
   // Conectarse
   mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
