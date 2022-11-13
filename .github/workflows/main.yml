@@ -30,6 +30,6 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        build-args: mongo_uri=${{ secrets.MONGO_URI }}
+        build-args: mongo_uri${{ secrets.MONGO_URI }}
         tags: ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito:latest
       
