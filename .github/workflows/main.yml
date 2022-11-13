@@ -25,9 +25,10 @@ jobs:
       uses: docker/setup-buildx-action@v2
     -
       name: Build and push
-      uses: docker/build-push-action@v3
-      env:
-          MONGO_URI: ${{ secrets.MONGO_URI }}
+      run: docker build . --tag ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito:latest --build-arg mongo_uri=${{ secrets.MONGO_URI }}
+      
+    -
+      uses: docker/push-action@v3
       with:
         context: .
         file: ./Dockerfile
