@@ -18,7 +18,7 @@ app.use(require('./routes/cart'));
 
 
 app.listen(port, () => {
-  console.log(`corriento en el puerto: ${port}`)
+  console.log(`corriento en ${ process.env.MONGO_URI} el puerto: ${port}`)
   
 console.log(process.env.MONGO_URI)
   // Conectarse
