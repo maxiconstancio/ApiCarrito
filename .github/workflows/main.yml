@@ -28,10 +28,5 @@ jobs:
       run: docker build . --tag ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito:latest --build-arg mongo_uri=${{ secrets.MONGO_URI }}
       
     -
-      uses: docker/push-action@v3
-      with:
-        context: .
-        file: ./Dockerfile
-        push: true
-        tags: ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito:latest
-      
+      name: Push Image
+      run: docker push ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito:latest
