@@ -25,7 +25,7 @@ jobs:
       uses: docker/setup-buildx-action@v2
     -
       name: Build and push
-      run: docker build . --tag ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito:latest --build-arg mongo_uri=${{ secrets.MONGO_URI }}
+      run: docker build . --tag ${{ secrets.DOCKER_HUB_USER_NAME }}/apicarrito --build-arg mongo_uri=${{ secrets.MONGO_URI }}
       
     -
       name: Push Image
